@@ -1,10 +1,15 @@
-1. What is memory management in system programming?
-Memory management is the process of controlling and coordinating computer memory, assigning blocks to various programs, and ensuring efficient use of RAM and virtual memory.
-
-2. Define virtual memory.
-Virtual memory is a memory abstraction that allows programs to use more memory than physically available by using disk storage as RAM.
-
-3. Differentiate between physical memory and virtual memory.
+## What is memory management in system programming?
+```c
+Memory management is the process of controlling and coordinating computer memory,
+assigning blocks to various programs, and ensuring efficient use of RAM and virtual memory.
+```
+## Define virtual memory.
+```c
+Virtual memory is a memory abstraction that allows programs to use more memory
+than physically available by using disk storage as RAM.
+```
+## Differentiate between physical memory and virtual memory.
+```c
 _________________________________________________________________________________________________________________________________
 Feature		|	Virtual Memory						|	Physical Memory				 |
 ________________|_______________________________________________________________|________________________________________________|
@@ -17,164 +22,211 @@ Purpose		| Allows more processes to run and prevents memory overflow	| Used to a
 Managed By	| Operating System and MMU (Memory Management Unit)		| Directly by the hardware and OS		 |
 Example		| A 4GB program running on a system with only 2GB RAM		| The 2GB RAM is the physical memory being	 |
 ________________|_______________________________________________________________|________________________________________________|
-
-4. What is the role of an operating system in memory management?
+```
+## What is the role of an operating system in memory management?
+```c
 Allocates and deallocates memory, manages virtual memory, handles page faults, and ensures memory protection and efficiency.
-
-5. Explain the purpose of memory allocation.
+```
+## Explain the purpose of memory allocation.
+```c
 To reserve space in memory for program variables, data, and operations during execution.
-
-6. Describe the significance of memory deallocation.
+```
+## Describe the significance of memory deallocation.
+```c
 Frees memory when no longer needed, preventing leaks and making room for other processes.
-
-7. Define fragmentation in memory management.
+```
+## Define fragmentation in memory management.
+```c
 It is the condition where memory space is used inefficiently, reducing available space.
-
-8. What are the types of fragmentation?
+```
+## What are the types of fragmentation?
+```c
 Internal and External fragmentation.
-
-9. Explain internal fragmentation.
+```
+## Explain internal fragmentation.
+```c
 Occurs when allocated memory block is larger than requested memory.
-
-10. Explain external fragmentation.
+```
+## Explain external fragmentation.
+```c
 Occurs when free memory is scattered in small blocks, not usable for large allocations.
-
-11. How is fragmentation managed in memory allocation?
+```
+## How is fragmentation managed in memory allocation?
+```c
 Using techniques like compaction, paging, and segmentation.
-
-12. Describe the concept of paging.
+```
+## Describe the concept of paging.
+```c
 Divides memory into fixed-size pages to eliminate external fragmentation and uses page tables for address translation.
-
-13. Explain segmentation.
+```
+## Explain segmentation.
+```c
 Divides memory into segments based on logical divisions like code, data, stack.
-
-14. What is the difference between paging and segmentation?
-
+```
+## What is the difference between paging and segmentation?
+```c
 Paging: Fixed-size blocks, avoids fragmentation.
 
 Segmentation: Logical units, better for protection and sharing.
-
-15. Define page table.
+```
+## Define page table.
+```c
 A data structure that maps virtual addresses to physical memory frames.
-
-16. Define Memory Management Unit (MMU).
+```
+## Define Memory Management Unit (MMU).
+```c
 A hardware component that translates virtual addresses to physical addresses.
-
-17. Explain the role of MMU in memory management.
+```
+## Explain the role of MMU in memory management.
+```c
 Handles address translation, memory protection, and supports virtual memory.
-
-18. Describe the translation lookaside buffer (TLB).
+```
+## Describe the translation lookaside buffer (TLB).
+```c
 A cache that stores recent address translations to speed up memory access.
-
-19. What is TLB miss? How is it handled?
+```
+## What is TLB miss? How is it handled?
+```c
 Occurs when the required mapping is not in TLB; the system then looks into the page table.
-
-20. Discuss the working principle of MMU.
+```
+## Discuss the working principle of MMU.
+```c
 It uses page tables and TLBs to translate virtual addresses to physical addresses dynamically.
-
-21. Explain the concept of address translation in MMU.
+```
+## Explain the concept of address translation in MMU.
+```c
 MMU translates logical addresses to physical addresses using page tables and TLBs.
-
-22. How does MMU support virtual memory?
+```
+## How does MMU support virtual memory?
+```c
 By mapping pages to physical memory and handling page faults automatically.
-
-23. Describe the process of page table traversal in MMU.
+```
+## Describe the process of page table traversal in MMU.
+```c
 MMU accesses multi-level page tables to locate physical memory frames.
-
-24. What is page fault handling in MMU?
+```
+## What is page fault handling in MMU?
+```c
 When a referenced page is not in memory, MMU triggers OS to load it from disk.
-
-25. Explain the page replacement algorithms used in MMU.
+```
+## Explain the page replacement algorithms used in MMU.
+```c
 FIFO, LRU, Optimal, Clock, Second Chance, etc.
-
-26. Define page replacement algorithms.
+```
+## Define page replacement algorithms.
+```c
 Strategies to decide which page to remove when a new page needs to be loaded into memory.
-
-27. Describe the FIFO page replacement algorithm.
+```
+## Describe the FIFO page replacement algorithm.
+```c
 Replaces the oldest page in memory.
-
-28. Discuss the optimal page replacement algorithm.
+```
+## Discuss the optimal page replacement algorithm.
+```c
 Replaces the page not used for the longest time in future (theoretical best).
-
-29. Explain the LRU (Least Recently Used) page replacement algorithm.
+```
+## Explain the LRU (Least Recently Used) page replacement algorithm.
+```c
 Removes the page that hasn’t been accessed for the longest time.
-
-30. What is the clock page replacement algorithm?
+```
+## What is the clock page replacement algorithm?
+```c
 Uses a circular queue and a "used" bit to give pages a second chance before replacing.
-
-31. Discuss the advantages and disadvantages of each page replacement algorithm.
-
+```
+## Discuss the advantages and disadvantages of each page replacement algorithm.
+```c
 FIFO: Simple, but poor decisions.
 
 LRU: Effective, but costly.
 
 Clock: Efficient approximation of LRU.
-
-32. Compare and contrast different page replacement algorithms.
+```
+## Compare and contrast different page replacement algorithms.
+```c
 FIFO is simplest, Optimal is best in theory, LRU is practical, Clock is efficient.
-
-33. Explain the working of the NRU (Not Recently Used) algorithm.
+```
+## Explain the working of the NRU (Not Recently Used) algorithm.
+```c
 Classifies pages based on reference and modify bits, removes least recently used.
-
-34. Describe the Second Chance algorithm.
+```
+## Describe the Second Chance algorithm.
+```c
 Improves FIFO by giving pages a second chance if their reference bit is set.
-
-35. Discuss enhancements to page replacement algorithms.
+```
+## Discuss enhancements to page replacement algorithms.
+```c
 Working set, aging, and hybrid algorithms aim to improve hit ratio and reduce page faults.
-
-36. Define segmentation in memory management.
+```
+## Define segmentation in memory management.
+```c
 Divides memory into variable-length segments based on program structure.
-
-37. Explain the benefits of segmentation.
+```
+## Explain the benefits of segmentation.
+```c
 Logical separation, better protection, supports modular programs.
-
-38. What are the disadvantages of segmentation?
+```
+## What are the disadvantages of segmentation?
+```c
 Causes external fragmentation and complex management.
-
-39. Describe the implementation of segmentation.
+```
+## Describe the implementation of segmentation.
+```c
 Uses segment tables with base and limit for each segment.
-
-40. Discuss segmentation fault and its causes.
+```
+## Discuss segmentation fault and its causes.
+```c
 An error when a process accesses memory outside its allowed segment.
-
-41. Explain segment registers.
+```
+## Explain segment registers.
+```c
 Hold base addresses and sizes of segments for address translation.
-
-42. What is a segment table?
+```
+## What is a segment table?
+```c
 Maps segment numbers to base and limit values.
-
-43. How does segmentation support protection and sharing?
+```
+## How does segmentation support protection and sharing?
+```c
 Each segment can have access permissions and be shared with other processes.
-
-44. Discuss segmentation with paging.
+```
+## Discuss segmentation with paging.
+```c
 Segments are divided into pages, combining benefits of both techniques.
-
-45. Compare segmentation with paging.
+```
+## Compare segmentation with paging.
+```c
 Segmentation: logical view, can fragment. Paging: physical memory, no fragmentation.
-
-46. Define memory fragmentation.
+```
+## Define memory fragmentation.
+```c
 Wasted memory due to small unusable spaces between allocations.
-
-47. Explain causes of memory fragmentation.
+```
+## Explain causes of memory fragmentation.
+```c
 Dynamic allocation and variable request sizes.
-
-48. How does fragmentation affect system performance?
+```
+## How does fragmentation affect system performance?
+```c
 Wastes memory and slows allocation.
-
-49. Techniques to reduce fragmentation?
+```
+## Techniques to reduce fragmentation?
+```c
 Paging, compaction, better allocators, segmentation with paging.
-
-50. Explain compaction.
+```
+## Explain compaction.
+```c
 Moves memory contents to remove fragmentation and combine free space.
-
-51. What is memory compaction?
+```
+## What is memory compaction?
+```c
 Memory compaction is the process of moving allocated memory blocks together to create larger contiguous blocks of free memory and reduce external fragmentation.
-
-52. Describe the working of memory compaction algorithms.
+```
+## Describe the working of memory compaction algorithms.
+```c
 They scan memory, move occupied blocks towards one end, and update pointers or references to those blocks.
-
-53. Discuss the challenges in implementing memory compaction.
-
+```
+## Discuss the challenges in implementing memory compaction.
+```c
 High CPU overhead
 
 Needs process cooperation or stopping
@@ -182,18 +234,21 @@ Needs process cooperation or stopping
 Risk of pointer inconsistencies
 
 Time-consuming in real-time systems
-
-54. Explain memory fragmentation in embedded systems.
+```
+## Explain memory fragmentation in embedded systems.
+```c
 Due to limited RAM, fragmentation can severely impact performance; fixed-size allocation and memory pools are often used to mitigate it.
-
-55. How does memory allocation impact memory fragmentation?
+```
+## How does memory allocation impact memory fragmentation?
+```c
 Inefficient or frequent dynamic allocations cause fragmentation, especially if sizes vary greatly or are deallocated at random times.
-
-56. Define memory mapping.
+```
+## Define memory mapping.
+```c
 It is the process of mapping files or devices into the address space of a process for direct access via memory operations.
-
-57. Explain the purpose of memory mapping.
-
+```
+## Explain the purpose of memory mapping.
+```c
 Efficient I/O
 
 Faster file access
@@ -201,23 +256,25 @@ Faster file access
 Shared memory implementation
 
 Simplified device communication
-
-58. Describe memory mapping techniques.
-
+```
+## Describe memory mapping techniques.
+```c
 File-backed mapping (maps a file to memory)
 
 Anonymous mapping (maps memory without backing file)
 
 Device mapping (e.g., memory-mapped I/O)
-
-59. What is memory-mapped I/O?
+```
+## What is memory-mapped I/O?
+```c
 Technique where hardware registers of devices are mapped into virtual memory, allowing device access as if reading/writing memory.
-
-60. Explain memory-mapped files.
+```
+## Explain memory-mapped files.
+```c
 Files are mapped into memory space so file operations can be performed using memory read/write operations.
-
-61. Discuss advantages of memory mapping.
-
+```
+## Discuss advantages of memory mapping.
+```c
 Less system call overhead
 
 Faster access
@@ -225,103 +282,121 @@ Faster access
 Shared access across processes
 
 File content becomes part of virtual memory
-
-62. What are the drawbacks of memory mapping?
-
+```
+## What are the drawbacks of memory mapping?
+```c
 Platform-dependent
 
 Can exhaust virtual address space
 
 Not efficient for small or random I/O
-
-63. How does memory mapping improve performance?
+```
+## How does memory mapping improve performance?
+```c
 Reduces copying, bypasses system calls, and allows direct access to disk-resident data via the page cache.
-
-64. Explain memory-mapped graphics.
+```
+## Explain memory-mapped graphics.
+```c
 A display buffer is mapped into memory, enabling direct pixel manipulation by writing to specific memory addresses.
-
-65. Discuss memory mapping in embedded systems.
+```
+## Discuss memory mapping in embedded systems.
+```c
 Used to access sensors, peripherals, and non-volatile storage efficiently; minimizes CPU overhead.
-
-66. Define cache memory.
+```
+## Define cache memory.
+```c
 A small, fast memory between the CPU and RAM that stores frequently accessed data and instructions.
-
-67. Explain the purpose of cache memory.
+```
+## Explain the purpose of cache memory.
+```c
 Speeds up data access and reduces CPU wait time by storing copies of frequently used main memory locations.
-
-68. Describe types of cache memory.
-
+```
+## Describe types of cache memory.
+```c
 L1, L2, L3 cache (hierarchical)
 
 Instruction and data caches
 
 Write-back and write-through caches
-
-69. Discuss the cache coherence problem.
+```
+## Discuss the cache coherence problem.
+```c
 Occurs in multiprocessor systems when different CPUs cache the same memory location and one updates it, causing inconsistencies.
-
-70. Explain cache replacement policies.
+```
+## Explain cache replacement policies.
+```c
 Rules to decide which cache block to evict when new data needs to be loaded: LRU, FIFO, Random, LFU, etc.
-
-71. What is cache associativity?
+```
+## What is cache associativity?
+```c
 Refers to how cache blocks are organized and selected for replacement: direct-mapped, set-associative, or fully associative.
-
-72. Describe the working of cache memory.
+```
+## Describe the working of cache memory.
+```c
 When the CPU accesses memory, it checks cache first. If found (hit), it uses it; otherwise (miss), it fetches from RAM and updates cache.
-
-73. Explain cache hit and cache miss.
-
+```
+## Explain cache hit and cache miss.
+```c
 Cache hit: Data is found in the cache.
 
 Cache miss: Data is not in the cache and must be fetched from main memory.
-
-74. Discuss the importance of cache memory in memory management.
+```
+## Discuss the importance of cache memory in memory management.
+```c
 Boosts CPU performance, reduces memory latency, and lowers main memory load.
-
-75. How does cache memory relate to memory hierarchy?
+```
+## How does cache memory relate to memory hierarchy?
+```c
 Cache sits at the top (closest to CPU) of the memory hierarchy, offering the fastest access compared to RAM, SSD, and HDD.
-
-76. Define memory protection.
+```
+## Define memory protection.
+```c
 A mechanism to control access to memory segments and prevent processes from accessing each other’s memory.
-
-77. Explain the need for memory protection.
+```
+## Explain the need for memory protection.
+```c
 Prevents memory corruption, bugs, or malicious access that could crash the system or leak sensitive information.
-
-78. Describe techniques for implementing memory protection.
-
+```
+## Describe techniques for implementing memory protection.
+```c
 Segmentation
 
 Paging with access bits
 
 Privilege levels (user vs kernel)
-
-79. What is segmentation fault?
+```
+## What is segmentation fault?
+```c
 A runtime error that occurs when a process accesses memory that it's not allowed to (e.g., null pointer dereference).
-
-80. Explain the role of privilege levels in memory protection.
+```
+## Explain the role of privilege levels in memory protection.
+```c
 Defines which memory regions or instructions can be accessed in user vs kernel mode, ensuring system integrity.
-
-81. Discuss the mechanism of memory protection in modern OS.
+```
+## Discuss the mechanism of memory protection in modern OS.
+```c
 Combines MMU, page tables, access flags, and privilege checks to isolate and secure memory between processes.
-
-82. What are the security implications of memory protection?
-
+```
+## What are the security implications of memory protection?
+```c
 Prevents data leaks
 
 Blocks unauthorized access
 
 Protects OS and other processes from exploits
-
-83. Explain the concept of memory isolation.
+```
+## Explain the concept of memory isolation.
+```c
 Each process has its own memory space; enforced by hardware and OS to avoid interference.
-
-84. Discuss challenges in implementing memory protection.
-
+```
+## Discuss challenges in implementing memory protection.
+```c
 Performance overhead
 
 Complex access control logic
 
 Compatibility with legacy code
+```
 
 85. How does memory protection contribute to system security?
 Protects critical regions from unauthorized access, ensures process isolation, and is key to enforcing the principle of least privilege.
