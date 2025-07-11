@@ -1,0 +1,134 @@
+85. What are the types of files present in Linux OS?
+- Regular files (-)
+- Directory files (d)
+- Character device files (c)
+- Block device files (b)
+- Symbolic links (l)
+- Socket files (s)
+- Named pipes (FIFOs) (p)
+
+86. How do IPC Objects, named pipes, be accessed?
+- Named pipes (FIFOs) are accessed via filesystem pathnames, just like regular files.
+- Created using mkfifo() or mknod().
+- Accessed using open(), read(), and write() system calls.
+
+87. User space application sends request to hardware by using which I/O calls?
+- read(), write(), ioctl(), mmap()
+
+88. Why are basic I/O calls called universal I/O calls?
+- Because they work uniformly across all file types: regular files, pipes, sockets, devices.
+
+89. What is the content of the Inode Object?
+- File type, Permissions, Owner UID/GID, Timestamps, File size, Pointers to data blocks, Link count, Device ID
+
+90. In which object information of the file get stored?
+- In the inode object.
+
+91. Kernel uses which object to represent a file?
+- struct file (file object) and struct inode
+
+92. Can we access the file information present in inode from the user application? If yes, then how?
+- Yes, indirectly using stat(), fstat(), or lstat() system calls.
+
+93. Which system calls are used to access the file information?
+- stat(), fstat(), lstat()
+
+94. ls command internally invokes which system call to access the file information?
+- stat(), lstat()
+
+95. What happens after the kernel finds its inode object?
+- It creates a file object, sets up file descriptors, and loads metadata from the inode.
+
+96. What are the contents of the file object?
+- File position, Access mode, Reference to inode, Pointer to file operations, Flags, File descriptor
+
+97. Kernel uses which object to represent the open files?
+- struct file
+
+98. What is the difference between the primary data and other members of the file object?
+- Primary data: File offset, access flags
+- Other members: Pointers to inode, operations, private data
+
+99. Where does the file object base address get stored?
+- In the File Descriptor Table (FDT) of the process.
+
+100. When is the fd table created and what is the size of the fd table?
+- Created during process creation. Default limit: 1024 (can be changed via ulimit/sysctl).
+
+101. When is the file object created?
+- When a file is opened using open() or similar system calls.
+
+102. What does open() return?
+- A file descriptor (int)
+
+103. When a file opens for the first time by using open() calls in your program, what is returned?
+- A non-negative integer (file descriptor), or -1 on failure.
+
+104. Why do read() system calls need access to file objects?
+- To access file cursor, mode, inode info, and other file-related state.
+
+105. Which system call do we use to change the cursor position without reading and writing on a file?
+- lseek()
+
+106. Can we open the same file from multiple processes? Explain the memory segment in kernel space?
+- Yes. Each process has its own FD table pointing to file objects, which refer to common inode object in kernel space.
+
+107. Kernel uses which object to represent a file?
+- struct inode and struct file
+
+108. Is there any limit on number of files that can be opened from the program?
+- Yes. Soft limit (ulimit -n), Hard limit (/proc/sys/fs/file-max)
+
+109. What are the standard I/O calls? Give some examples and alternate name.
+- Buffered I/O or Library I/O. Examples: fopen(), fread(), fwrite(), fgets(), fprintf()
+
+110. What are the basic I/O calls? Give some examples and alternate name.
+- System I/O or Low-level I/O. Examples: open(), read(), write(), close()
+
+111. What is the difference between basic I/O calls and standard I/O calls?
+| Basic I/O (System) | Standard I/O (Buffered) |
+|--------------------|-------------------------|
+| Uses system calls  | Uses stdlib wrappers    |
+| File descriptor    | FILE* pointer           |
+| Unbuffered         | Buffered                |
+
+112. Other than basic and standard I/O calls, is there any method to access the file?
+- Yes: Memory-mapped I/O (mmap), Asynchronous I/O (AIO), Direct I/O (O_DIRECT)
+
+113. How do user space applications get access to the content of inode objects?
+- Indirectly via stat() or by reading /proc or ls -i
+
+114. How do you get access to kernel objects/data structure/information present in kernel space?
+- Through: /proc, /sys, System calls, Writing kernel modules
+
+115. Which system calls are used to access the file object?
+- open(), read(), write(), close(), dup(), fcntl()
+
+116. Which system calls are used to access the Inode object?
+- stat(), fstat(), lstat()
+
+117. How to print "Hello World" on the screen using basic I/O calls?
+#include <unistd.h>
+int main() {
+    write(1, "Hello World\n", 12);
+    return 0;
+}
+
+118. Which system call do we use to duplicate the file descriptor?
+- dup(), dup2(), dup3()
+
+119. What are the advantages of dup system calls?
+- Redirect output/input, Allows multiple FDs to point to same file object, Useful in I/O redirection
+
+120. Which object stores the ownership information of a file?
+- Inode object
+
+121. Which command is used to display the username corresponding ID?
+- id or whoami or getent passwd <UID>
+
+122. How can we see the multiple user information in our system?
+- cat /etc/passwd or getent passwd
+
+123. Which command is used to change the UID and GID?
+- usermod -u <new_uid> username
+- groupmod -g <new_gid> groupname
