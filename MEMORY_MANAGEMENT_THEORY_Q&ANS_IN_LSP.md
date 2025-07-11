@@ -25,7 +25,8 @@ ________________|_______________________________________________________________
 ```
 ## What is the role of an operating system in memory management?
 ```c
-Allocates and deallocates memory, manages virtual memory, handles page faults, and ensures memory protection and efficiency.
+Allocates and deallocates memory, manages virtual memory, handles page faults,
+and ensures memory protection and efficiency.
 ```
 ## Explain the purpose of memory allocation.
 ```c
@@ -219,7 +220,8 @@ Moves memory contents to remove fragmentation and combine free space.
 ```
 ## What is memory compaction?
 ```c
-Memory compaction is the process of moving allocated memory blocks together to create larger contiguous blocks of free memory and reduce external fragmentation.
+Memory compaction is the process of moving allocated memory blocks together to create
+larger contiguous blocks of free memory and reduce external fragmentation.
 ```
 ## Describe the working of memory compaction algorithms.
 ```c
@@ -237,15 +239,18 @@ Time-consuming in real-time systems
 ```
 ## Explain memory fragmentation in embedded systems.
 ```c
-Due to limited RAM, fragmentation can severely impact performance; fixed-size allocation and memory pools are often used to mitigate it.
+Due to limited RAM, fragmentation can severely impact performance;
+ fixed-size allocation and memory pools are often used to mitigate it.
 ```
 ## How does memory allocation impact memory fragmentation?
 ```c
-Inefficient or frequent dynamic allocations cause fragmentation, especially if sizes vary greatly or are deallocated at random times.
+Inefficient or frequent dynamic allocations cause fragmentation, especially
+ if sizes vary greatly or are deallocated at random times.
 ```
 ## Define memory mapping.
 ```c
-It is the process of mapping files or devices into the address space of a process for direct access via memory operations.
+It is the process of mapping files or devices into the address space of a process
+for direct access via memory operations.
 ```
 ## Explain the purpose of memory mapping.
 ```c
@@ -267,7 +272,8 @@ Device mapping (e.g., memory-mapped I/O)
 ```
 ## What is memory-mapped I/O?
 ```c
-Technique where hardware registers of devices are mapped into virtual memory, allowing device access as if reading/writing memory.
+Technique where hardware registers of devices are mapped into virtual memory,
+allowing device access as if reading/writing memory.
 ```
 ## Explain memory-mapped files.
 ```c
@@ -321,7 +327,8 @@ Write-back and write-through caches
 ```
 ## Discuss the cache coherence problem.
 ```c
-Occurs in multiprocessor systems when different CPUs cache the same memory location and one updates it, causing inconsistencies.
+Occurs in multiprocessor systems when different CPUs cache the same memory
+location and one updates it, causing inconsistencies.
 ```
 ## Explain cache replacement policies.
 ```c
@@ -333,7 +340,8 @@ Refers to how cache blocks are organized and selected for replacement: direct-ma
 ```
 ## Describe the working of cache memory.
 ```c
-When the CPU accesses memory, it checks cache first. If found (hit), it uses it; otherwise (miss), it fetches from RAM and updates cache.
+When the CPU accesses memory, it checks cache first. If found (hit), it uses it;
+otherwise (miss), it fetches from RAM and updates cache.
 ```
 ## Explain cache hit and cache miss.
 ```c
@@ -398,5 +406,8 @@ Complex access control logic
 Compatibility with legacy code
 ```
 
-85. How does memory protection contribute to system security?
-Protects critical regions from unauthorized access, ensures process isolation, and is key to enforcing the principle of least privilege.
+## How does memory protection contribute to system security?
+```c
+Protects critical regions from unauthorized access, ensures process isolation,
+and is key to enforcing the principle of least privilege.
+```
