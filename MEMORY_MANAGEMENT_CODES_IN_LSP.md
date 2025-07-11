@@ -1,4 +1,4 @@
-86. Write a C program to demonstrate dynamic memory allocation using malloc().
+## Write a C program to demonstrate dynamic memory allocation using malloc().
 
 ```c
 #include <stdio.h>
@@ -51,7 +51,7 @@ return 0;
 }
 ```
 
-87. Implement a C program to allocate memory for an array dynamically using calloc().
+## Implement a C program to allocate memory for an array dynamically using calloc().
 
 ```c
 #include <stdio.h>
@@ -79,7 +79,7 @@ return 0;
 }
 ```
 
-88. Write a C program to resize dynamically allocated memory using realloc().
+## Write a C program to resize dynamically allocated memory using realloc().
 
 ```c
 #include <stdio.h>
@@ -105,7 +105,7 @@ int main() {
 }
 ```
 
-89. Develop a program in C to allocate memory for a linked list node dynamically.
+## Develop a program in C to allocate memory for a linked list node dynamically.
 
 ```c
 #include <stdio.h>
@@ -146,7 +146,7 @@ int main() {
 }
 ```
 
-90. Implement a C program to simulate memory allocation using the first-fit algorithm.
+## Implement a C program to simulate memory allocation using the first-fit algorithm.
 
 ```c
 #include <stdio.h>
@@ -190,8 +190,7 @@ int main() {
     return 0;
 }
 ```
-
-91. Write a C program to simulate memory allocation using the best-fit algorithm.
+## Write a C program to simulate memory allocation using the best-fit algorithm.
 
 ```c
 #include <stdio.h>
@@ -237,7 +236,7 @@ int main() {
 }
 ```
 
-92. Develop a C program to simulate memory allocation using the worst-fit algorithm.
+## Develop a C program to simulate memory allocation using the worst-fit algorithm.
 
 ```c
 #include <stdio.h>
@@ -272,7 +271,7 @@ int main() {
 }
 ```
 
-93. Implement a C program to simulate memory allocation using the next-fit algorithm.
+## Implement a C program to simulate memory allocation using the next-fit algorithm.
 
 ```c
 #include <stdio.h>
@@ -316,7 +315,7 @@ int main() {
 }
 ```
 
-94. Write a C program to implement a simple memory allocator using the buddy system.
+## Write a C program to implement a simple memory allocator using the buddy system.
 
 ```c
 #include <stdio.h>
@@ -338,7 +337,7 @@ return 0;
 }
 ```
 
-95. Develop a C program to implement a memory allocator using a custom memory management algorithm.
+## Develop a C program to implement a memory allocator using a custom memory management algorithm.
 
 ```c
 #include <stdio.h>
@@ -370,7 +369,7 @@ int main() {
 }
 ```
 
-96. Write a C program to demonstrate memory mapping using mmap().
+## Write a C program to demonstrate memory mapping using mmap().
 
 ```c
 #include <stdio.h>
@@ -398,7 +397,7 @@ int main() {
 }
 ```
 
-97. Implement a C program to read from and write to a memory-mapped file.
+## Implement a C program to read from and write to a memory-mapped file.
 
 ```c
 #include <stdio.h>
@@ -424,7 +423,7 @@ int main() {
 }
 ```
 
-98. Develop a C program to demonstrate shared memory usage using shmget() and shmat().
+## Develop a C program to demonstrate shared memory usage using shmget() and shmat().
 
 ```c
 #include <stdio.h>
@@ -445,7 +444,7 @@ int main() {
 }
 ```
 
-99. Write a C program to create a shared memory segment and synchronize access using semaphores.
+## Write a C program to create a shared memory segment and synchronize access using semaphores.
 
 ```c
 #include <stdio.h>
