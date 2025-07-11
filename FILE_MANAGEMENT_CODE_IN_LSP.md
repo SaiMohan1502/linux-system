@@ -13,7 +13,7 @@ int main() {
     return 0;
 }
 ```
-##Develop a C program to open an existing text file and display its contents
+## Develop a C program to open an existing text file and display its contents
 
 ```c
 #include <stdio.h>
@@ -33,7 +33,7 @@ int main() {
 }
 ```
 
-##Implement a C program to create a new directory named "Test" in the current directory?
+## Implement a C program to create a new directory named "Test" in the current directory?
 
 ```c
  #include <stdio.h>
@@ -84,7 +84,7 @@ int main() {
 }
 ```
 
-##Write a C program to check if a file named "sample.txt" exists in the current directory?
+## Write a C program to check if a file named "sample.txt" exists in the current directory?
 
 ```c
 #include <stdio.h>
@@ -104,7 +104,7 @@ int main()
     return 0;
 }
 ```
-##Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
+## Develop a C program to rename a file from "oldname.txt" to "newname.txt"?
 
 ```c
 #include <stdio.h>
@@ -164,7 +164,7 @@ int main() {
 }
 ```
 
-##Develop a C program to move a file from one directory to another?
+## Develop a C program to move a file from one directory to another?
 
 ```c
 #include <stdio.h>
@@ -195,7 +195,7 @@ int main()
     return 0;
 }
 ```
-##Implement a C program to list all files in the current directory?
+## Implement a C program to list all files in the current directory?
 
 ```c
 #include <stdio.h>
@@ -236,7 +236,7 @@ int main() {
 }
 ```
 
-##Develop a C program to check if a directory named "Test" exists in the current directory?
+## Develop a C program to check if a directory named "Test" exists in the current directory?
 
 ```c
 #include <stdio.h>
@@ -255,7 +255,7 @@ int main() {
 }
 ```
 
-##Implement a C program to create a new directory named "Backup" in the parent directory?
+## Implement a C program to create a new directory named "Backup" in the parent directory?
 
 ```c
 #include <stdio.h>
@@ -343,7 +343,7 @@ int main() {
 }
 ```
 
-##Implement a C program to count the number of lines in a file named "data.txt"? 
+## Implement a C program to count the number of lines in a file named "data.txt"? 
 
 ```c
 #include <stdio.h>
@@ -369,7 +369,7 @@ int main() {
 }
 ```
 
-##Write a C program to append "Goodbye!" to the end of an existing file named "message.txt"?
+## Write a C program to append "Goodbye!" to the end of an existing file named "message.txt"?
 
 ```c
 #include <stdio.h>
