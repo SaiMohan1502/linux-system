@@ -9,11 +9,11 @@
 	3. These processes could be running on the same system or different systems over a network.
 ```
 ## Why we use IPC Mechanism?
-
+```c
 -> Inter-Process Communication (IPC) mechanisms are necessary because, in modern operating systems, processes run independently and do not share memory by default. Therefore, IPC is essential for building reliable, concurrent, and multi-process systems by enabling communication, data exchange, and synchronization between processes.
-
+```
 ## What are the types of IPC Mechanism's?
-
+```c
 -> Types of IPC Mechanism:- 
 	
 	1. Communication-Oriented IPC:
@@ -41,9 +41,9 @@
 		Mutexes
 
 		Condition Variables (used in threads)
-
+```
 ## What is meant by “unicast” and “multicast” IPC?
-
+```c
 -> In Inter-Process Communication (IPC), unicast and multicast refer to how messages are delivered from one process to others.
 
 	1. Unicast IPC:-
@@ -61,26 +61,26 @@
 		(ii). Example:- A process notifies multiple subscribed processes about an event (e.g., using publish-subscribe model).
 
 		(iii). Ways to Implement Multicast IPC:- Message Queues with Multiple Readers, Shared Memory + Semaphores (with multiple consumers)
-
+```
 ## What is meant by PIPES?
-
+```c
 -> A pipe is a unidirectional communication channel that allows one process to send data to another process, where the output of one becomes the input of the other.
-
+```
 ## What is meant by Blocking Calls?
-
+```c
 -> A blocking call suspends the execution of the calling process or thread until the operation completes.
-
+```
 ## What are the types of Blocking Calls?
-
+```c
 -> The types of Blocking Calls:-
 
 	1. I/O Blocking Calls:- These occur when a process waits for input or output operations to complete like " read(), write(), recv(), fgets()/scanf(), send() etc."
 
 	2. Process & Thread Synchronization Blocking:- These blocks execution until another process/thread or condition is met like " wait() / waitpid(), pthread_join(), sleep() / usleep() etc. ".
 	3. File and Device I/O Blocking :- Waits for data from disk, device, or external input like " open(), read() etc."
-
+```
 ## What are the different types of I/O Calls?
-
+```c
 -> Types of I/O Calls are:-
 
 	1. Basic I/O Calls:-
@@ -112,9 +112,9 @@
 		(ii). Types of Meory Mapping are of File mamping technique & Anomyous Mapping
 
 		(iii). Used to access files.
-
+```
 ## What are the I/O calls we are used in IPC Mechanisms?
-
+```c
 -> 
 	| 	IPC Type        | 		I/O Calls Involved                       |
 	| --------------------- | ------------------------------------------------------ |
@@ -125,32 +125,33 @@
 	| Sockets               | `socket()`, `bind()`, `connect()`, `read()`, `write()` |
 	| Signals               | `kill()`, `signal()`, `sigaction()`, `raise()`         |
 	| Memory-Mapped I/O     | `mmap()`, `munmap()`                                   |
-
+```
 ## What are the Blocking Calls used in IPC?
-
+```c
 -> read, write, accept, connect, send/sendto, recv/recvfrom, sem_wait, wait/waitpid, sleep etc.
- 
+ ```
 ## What is meant by Named Pipes?
-
+```c
 -> A Named Pipe (also called a FIFO — First In First Out) is a special type of file used for inter-process communication (IPC) that allows unrelated processes to communicate through a file name in the filesystem.
-
+```
 ## Where is the FIFO Object created?
-
+```c
 -> A FIFO (Named Pipe) is created as a special file in the filesystem — specifically, a device file of type p (pipe).
-
+```
 ## What is the call used to create a FIFO Object?
-
+```c
 -> we use the mkfifo() s a system call to create a FIFO object.
-
+```
 ## What are the Blocking Calls used in Named Pipes?
-
+```c
 -> open(O_RDONLY), open(O_WRONLY), read() & write()
-
+```
 ## Why read system calls acts as a blocking call?
-
+```c
 -> The read() system call is blocking by default to ensure that: read() waits until data is available to be read — it blocks the calling process to prevent it from continuing with incomplete or invalid data.
-
+```
 ## Difference between the Named Pipes and Pipes?
+```c
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 |				PIPES					|					NAMED PIPES (FIFO) 							|
 |-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -172,22 +173,22 @@
 |-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 |	read() acts as a blocking call.					|  open(), read() act as blocking calls		 								|
 |-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-
+```
 ## What is return value of read system call?
-
+```c
 ->
 	| **Return Value** | **Meaning**                              |
 	| ---------------- | ---------------------------------------- |
 	| `> 0`            | Number of bytes successfully read        |
 	| `0`              | End-of-File (EOF) reached                |
 	| `-1`             | Error occurred (check `errno` for cause) |
-
+```
 ## What is meant by message queue?
-
+```c
 -> A message queue is an IPC mechanism that allows processes to exchange data as discrete messages stored in a queue.
-
+```
 ## Why we use message queues?
-
+```c
 -> We use message queues for:- 
 
 	1. Enables asynchronous communication
@@ -199,9 +200,9 @@
 	4. Ensures reliable delivery
 
 	5. Offers structured communication (better than raw pipes)
-
+```
 ## What is difference between Named Pipe and Message Queue?
-
+```c
 | Aspect              | 			Named Pipe (FIFO)                                           | 				Message Queue                           |                                         
 --------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------|
 |  Definition         | A FIFO special file that allows 1-way or 2-way communication between processes.     | A data structure that allows processes to exchange discrete msg.
@@ -223,21 +224,21 @@
 | Kernel Buffering    | Uses kernel buffer like a regular pipe.                                             | Kernel maintains a message queue with limits on size and number of msgs.           
 
 | Creation Function   | `mkfifo()` or shell command `mkfifo filename`                                       | `msgget()`, `msgsnd()`, `msgrcv()`, `msgctl()`                                         
-
+```
 ## What is the system call used to create the message queue?
-
+```c
 -> To create the message queue we use " msgget() "
-
+```
 ## Where was the message queue created?
-
+```c
 -> The message queue is created inside the kernel (in kernel space memory) — not in the filesystem.
- 
+ ```
 ## What is meant by Shared Memory?
-
+```c
 -> Shared Memory is an Inter-Process Communication (IPC) mechanism that allows multiple processes to access the same memory region. It is the fastest IPC method because data doesn’t need to be copied between processes — they share it directly.
-
+```
 ## Why we use Shared Memory?
-
+```c
 -> We use Shared Memory because:-
 
 	1. Extremely Fast
@@ -249,9 +250,9 @@
 	4. Allows Communication Between Unrelated Processes
 
 	5. Suitable for Producer-Consumer Patterns
-
+```
 ## Difference between Shared Memory and Message Queues?
-
+```c
 | **Aspect**             | **Shared Memory**                                                          | **Message Queue**                                                       |
 | ---------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | **Definition**         | A memory segment that is shared between processes.                         | A queue structure used to exchange discrete messages between processes. |
@@ -265,25 +266,25 @@
 | **Ease of Use**        |  Complex – you handle memory layout and locking.                           | Easier – send/receive interface is simple.                              |
 | **Security**           | Must ensure processes don’t overwrite each other’s data.                   | Messages are safely queued and managed.                                 |
 | **Example Use Case**   | Shared cache, video frame buffers, simulation data.                        | Task coordination, status updates, small data packets.                  |
-
+```
 ## What is use of stat command?
-
+```c
 -> The stat command is used to display detailed information about a file or directory.
-
+```
 ## What is the use of semctl command?
-
+```c
 -> The semctl system call is used to control or manage System V semaphore sets.
-
+```
 ## How do we destroy the shared memory object?
-
+```c
 -> To destroy a shared memory object we use " shmctl(shmid, IPC_RMID, NULL); ". As this tells the kernel to delete the memory segment when it's no longer in use.
-
+```
 ## What is meant by Semaphores?
-
+```c
 -> A semaphore is a synchronization tool used to control access to a shared resource by multiple processes or threads in a concurrent system.
-
+```
 ## Why we use semaphores?
-
+```c
 -> Semaphores are used to:-
 
 	1. Safely share resources between processes
@@ -293,21 +294,21 @@
 	3. Ensure correct execution order
 
 	4. Synchronize process behavior
-
+```
 ## What is meant by Synchronization?
-
+```c
 -> Synchronization in system programming means coordinating the execution of multiple processes or threads so that they work together correctly without conflict when accessing shared resources.
-
+```
 ## What is meant by Asynchronization?
-
+```c
 -> Asynchronization (or asynchronous execution) means that tasks run independently, without waiting for each other to complete.
-
+```
 ## Why we use mutex locks?
-
+```c
 -> We use mutex locks to protect shared resources in multithreaded programs and ensure safe, consistent, and error-free execution.
-
+```
 ## What is the difference between mutex locks and semaphores?
-
+```c
 | **Feature**           | **Mutex Lock**                                            | **Semaphore**                                               |
 | --------------------- | --------------------------------------------------------- | ----------------------------------------------------------- |
 | **Meaning**           | **Mutual exclusion** — only one thread at a time          | Counting mechanism to allow **one or more** threads         |
@@ -318,23 +319,23 @@
 | **Unlocking**         | Only the **locking thread** can unlock                    | Any thread can signal/post                                  |
 | **Deadlock Risk**     | Higher if not used carefully                              | Also possible, especially with multiple semaphores          |
 | **Used In**           | Mostly for **threads (pthread\_mutex)**                   | For **both threads and processes** (`sem_get`, `sem_wait`)  |
-
+```
 ## What is meant by Race Condition?
-
+```c
 -> A race condition is a situation where two or more processes or threads access shared data at the same time, and the final outcome depends on the order of execution. 
-
+```
 ## What is meant by Deadlock?
-
+```c
 -> A deadlock is a situation where two or more processes or threads are waiting for each other to release resources, and none can proceed — they are stuck forever. 
-
+```
 ## What is meant by Critical Section?
-
+```c
 -> A Critical Section is a part of code that accesses shared resources (like variables, memory, files), and must not be executed by more than one thread/process at a time.
 							( or )
    A critical section is a block of code where only one thread/process is allowed to enter at a time to avoid conflicts or data corruption.
-
+```
 ## What is the difference between system v and POSIX?
-
+```c
 	| **Feature**        | **System V IPC**                          | **POSIX IPC**                               |
 	| ------------------ | ----------------------------------------- | ------------------------------------------- |
 	| **Origin**         | UNIX System V (1980s)                     | POSIX standard (IEEE)                       |
@@ -346,9 +347,9 @@
 	| **Message Queues** | `msgget()`, `msgsnd()`, `msgrcv()`        | `mq_open()`, `mq_send()`, `mq_receive()`    |
 	| **Cleanup**        | Must be manually removed (e.g., `shmctl`) | Can unlink like files (`shm_unlink`, etc.)  |
 	| **Storage**        | Kernel-managed                            | Appears under filesystem (e.g., `/dev/shm`) |
-
+```
 ## Describe the steps involved in creating and using a named pipe (FIFO) for IPC
--> 
+```c 
 	| **Step**             | **Action**                         |
 	| -------------------- | ---------------------------------- |
 	| 1. Create            | `mkfifo()` or `mkfifo` command     |
@@ -356,9 +357,9 @@
 	| 3. Read/Write        | `read()`, `write()`                |
 	| 4. Close             | `close()`                          |
 	| 5. (Optional) Delete | `rm myfifo`                        |
-
+```
 ## Describe the steps involved in creating and using a pipe for IPC
-->
+```c
 	| **Step**        | **Action**                                      |
 	| --------------- | ----------------------------------------------- |
 	| 1. Create       | `pipe(fd);`                                     |
@@ -368,128 +369,149 @@
 	| 5. Close        | Close all ends after use                        |
 	| 6. Wait         | (Optional) `wait()` for synchronization         |
 			
-
+```
  ## What is Interprocess communication?
+```c
 a) allows processes to communicate and synchronize their actions when using the same address space
 ✅b) allows processes to communicate and synchronize their actions
 c) allows the processes to only synchronize their actions without communication
 d) none of the mentioned
-
+```
 ## Message passing system allows processes to 
+```c
 ✅a) communicate with each other without sharing the same address space
 b) communicate with one another by resorting to shared data
 c) share data
 d) name the recipient or sender of the message
-
+```
 ## Which of the following two operations are provided by the IPC facility?
+```c
 a) write & delete message
 b) delete & receive message
 c) send & delete message
 ✅d) receive & send message
-
+```
 ## Messages sent by a process __________
+```c
 a) have to be of a fixed size
 b) have to be a variable size
 ✅c) can be fixed or variable sized
 d) none of the mentioned
-
+```
 ## The link between two processes P and Q to send and receive messages is called
+```c
 ✅a) communication link
 b) message-passing link
 c) synchronization link
 d) all of the mentioned
-
+```
 ## Which of the following are TRUE for direct communication?
+```c
 a) A communication link can be associated with N number of process(N = max. number of processes supported by system)
 ✅b) A communication link is associated with exactly two processes
 c) Exactly N/2 links exist between each pair of processes(N = max. number of processes supported by system)
 d) Exactly two link exists between each pair of processes
-
+```
 ## In indirect communication between processes P and Q __________
+```c
 a) there is another process R to handle and pass on the messages between P and Q
 b) there is another machine between the two processes to help communication
 ✅c) there is a mailbox to help communication between P and Q
 d) none of the mentioned
-
+```
 ## In the non blocking send __________
+```c
 a) the sending process keeps sending until the message is received
 ✅b) the sending process sends the message and resumes operation
 c) the sending process keeps sending until it receives a message
 d) none of the mentioned
-
+```
 ## What is the role of a semaphore in IPC?
+```c
 ✅a) Coordinating access to shared resources
 b) Transferring data between processes
 c) Sending signals to other processes
 d) Creating communication channels
-
+```
 ## Bounded capacity and Unbounded capacity queues are referred to as __________
+```c
 a) Programmed buffering
 ✅b) Automatic buffering
 c) User defined buffering
 d) No buffering
-
+```
 ## What is the role of a semaphore in IPC?
+```c
 ✅a) Coordinating access to shared resources
 b) Transferring data between processes
 c) Sending signals to other processes
 d) Creating communication channels
-
+```
 ## Which IPC mechanism provides a message-oriented communication model?
+```c
 a) Shared memory
 b) Pipes
 ✅c) Message queues
 d) Sockets
-
+```
 ## In the context of IPC, what are signals used for?
+```c
 a) Synchronizing processes
 b) Coordinating access to shared memory
 c) Sending messages between processes
 ✅d) Notifying processes about events or conditions
-
+```
 ## Which synchronization primitive is used to ensure mutually exclusive access to critical sections of code?
+```c
 a) Semaphore
 ✅b) Mutex
 c) Condition variable
 d) Barrier
-
+```
 ## Which IPC mechanism provides a communication endpoint for processes to communicate over a network or between processes on the same system?
+```c
 a) Named pipes
 b) Message queues
 c) Shared memory
 ✅d) Sockets
-
+```
 ## What is the primary advantage of using message queues for IPC compared to shared memory?
+```c
 a) Higher performance
 ✅b) More flexible communication model
 c) Simplicity of implementation
 d) Direct access to shared data
-
+```
 ## Which IPC mechanism involves copying data between processes, potentially incurring additional overhead?
+```c
 a) Shared memory
 b) Message queues
 ✅c) Sockets
 d) Semaphores
-
+```
 ## Which aspect is crucial in IPC to ensure that multiple processes or threads coordinate their activities and access shared resources safely?
+```c
 a) Data transfer efficiency
 ✅b) Synchronization
 c) Message passing
 d) Resource allocation
-
+```
 ## Which IPC mechanism involves copying data between processes through a temporary storage area in the kernel?
+```c
 a. Shared memory
 b. Message queues
 c. Sockets
 ✅d. Named pipes
-
+```
 ## Which IPC mechanism provides a high-performance, shared memory region for data exchange between processes?
+```c
 a) Pipes
 b) Semaphores
 c) Message queues
 ✅d) Shared memory
-
+```
 ## Which IPC mechanism is being used in the following pseudocode snip?
+```c
 // Producer process
 while (true) {
 produce_item(item);
@@ -504,8 +526,9 @@ a) Shared memory
 ✅b) Message queues
 c) Sockets
 d) Named pipes
-
+```
 ## What synchronization primitive is being used in the following pseudocode snippet?
+```c
 // Mutex initialization
 mutex = create_mutex();
 // Thread 1
@@ -522,8 +545,9 @@ a) Semaphore
 ✅b) Mutex
 c) Condition variable
 d) Barrier
-
+```
 ## What type of communication is being used in the following pseudocode snippet?
+```c
 // Server process
 create_socket();
 bind_socket();
@@ -544,3 +568,4 @@ a) Shared memory
 b) Message passing
 c) Message queues
 ✅d) Sockets
+```
