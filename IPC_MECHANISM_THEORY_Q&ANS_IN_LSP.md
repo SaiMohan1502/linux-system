@@ -1,5 +1,5 @@
 ## What is meant by an IPC Mechanism?
-
+```c
 -> IPC (Inter-Process Communication) mechanism refers to the methods or techniques that allow multiple processes to:
 
 	1. Communicate with each other, and
@@ -7,7 +7,7 @@
 	2. Coordinate or synchronize their actions.
 
 	3. These processes could be running on the same system or different systems over a network.
-
+```
 ## Why we use IPC Mechanism?
 
 -> Inter-Process Communication (IPC) mechanisms are necessary because, in modern operating systems, processes run independently and do not share memory by default. Therefore, IPC is essential for building reliable, concurrent, and multi-process systems by enabling communication, data exchange, and synchronization between processes.
