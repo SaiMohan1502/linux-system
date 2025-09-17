@@ -22,12 +22,12 @@ We use debugging to:
 ```
 ## What is the difference between hardware debugging and software debugging?
 ```c
-| Feature              | Hardware Debugging                     | Software Debugging                    |
-|----------------------|----------------------------------------|---------------------------------------|
-| Scope                | Analyzes embedded systems, firmware     | Analyzes software (applications)      |
-| Tools                | JTAG, TRACE32                           | GDB, Valgrind, IDEs                   |
-| Level                | Low-level (registers, memory, peripherals) | High-level (variables, functions)     |
-| Usage                | Real-time or embedded system debugging  | Application or OS-level debugging     |
+| Feature              | Hardware Debugging                          | Software Debugging                    |
+|----------------------|---------------------------------------------|---------------------------------------|
+| Scope                | Analyzes embedded systems, firmware         | Analyzes software (applications)      |
+| Tools                | JTAG, TRACE32                               | GDB, Valgrind, IDEs                   |
+| Level                | Low-level (registers, memory, peripherals)  | High-level (variables, functions)     |
+| Usage                | Real-time or embedded system debugging      | Application or OS-level debugging     |
 ```
 ## What command is used to add debugging information?
 ```c
