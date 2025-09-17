@@ -80,7 +80,7 @@ list
 ```
 ## How do you see the assembly code in GDB?
 ```c
-disassemble
+disassemble or disassemble main
 ```
 ## How do you check if a particular variable is changing or not every time in GDB?
 ```c
