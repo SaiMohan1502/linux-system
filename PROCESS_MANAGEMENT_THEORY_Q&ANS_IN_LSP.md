@@ -20,9 +20,10 @@
 		2. Synchronize parent and child -> Ensures parent waits for child to finish.
 
 		3. Get child's exit status Useful -> for decision-making in the parent.
- '''
+
+ ```
 ## Describe the role of the exec() family of functions in process management 
-'''c
+```c
 -> The exec() family of functions is used to replace the current process image with a new process image. It allows a process (usually after a fork()) to run a different program in the same process space.
 
 	Work flow:-
@@ -1614,6 +1615,7 @@ This is why error checking is critical after each system call.
 | **Use Case**           | When number of arguments is known at compile-time           | When arguments are stored in an array (e.g., dynamic) |
 
 ```
+
 
 
 
