@@ -6,7 +6,9 @@
  
 	2. By using “ Fork() “ as a system call:-
 
-		System call:- This is used in user space to send the request in sub-system in kernel space. Every system call has an equivalent call in kernel space which starts with “ sys_ “. Fork() system call can be used to create a child process and the process from where the fork() is invoked is called “ parent process ”. Once we call fork(), fork() control immediately jumps to kernel space or invoke an equivalent function in kernel space starting with “ sys_fork() “, which is actually sending request from process management sub-system to kernel space process sub-system.
+		System call:- This is used in user space to send the request in sub-system in kernel space.
+					 Every system call has an equivalent call in kernel space which starts with “ sys_ “. Fork() system call can be used to create a child process and the process from where the fork() is invoked is called “ parent process ”.
+					 Once we call fork(), fork() control immediately jumps to kernel space or invoke an equivalent function in kernel space starting with “ sys_fork() “, which is actually sending request from process management sub-system to kernel space process sub-system.
 
 ```
 ## What is the purpose of the wait() system call in process management?
@@ -1612,6 +1614,7 @@ This is why error checking is critical after each system call.
 | **Use Case**           | When number of arguments is known at compile-time           | When arguments are stored in an array (e.g., dynamic) |
 
 ```
+
 
 
 
