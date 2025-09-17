@@ -209,7 +209,7 @@
 -> The fork() system call enables multitasking by creating a new child process that runs concurrently with the parent. Each process gets a unique ID and initially shares memory using Copy-On-Write, making it efficient. This allows multiple tasks to run in parallel, forming the basis for multitasking in Unix-like systems. It's widely used in shells, servers, and background task management.
 
 ```
-##. How does the exec() system call replace the current process image with a new one?
+## How does the exec() system call replace the current process image with a new one?
 ```c
 -> Step-by-Step: How exec() Works
 
@@ -1615,6 +1615,7 @@ This is why error checking is critical after each system call.
 | **Use Case**           | When number of arguments is known at compile-time           | When arguments are stored in an array (e.g., dynamic) |
 
 ```
+
 
 
 
