@@ -35,25 +35,25 @@
 ```
 ## Differentiate between the fork() and exec() system calls.
 ```c
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|Feature		|			fork()						|			exec() 							|
-|-----------------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Feature				|			fork()						|			exec() 																							
+|-----------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------|
 |Definition		| Creates a new process (child) by duplicating the calling process	| Replaces the current process image with a new program 			|
-|			|									|										|
+
 |Process Creation	| Yes, creates a new child process					| No new process, replaces current process 					|
-|			|									|										|
+																						
 |Return Value		| 0 (child), PID (parent), -1 (error)					| -1 (on error), no return on success 						|
-|			|									|										|
+																						
 |Memory Sharing		| Child gets a copy of the parent’s memory (Copy-on-Write)		| Current process memory is replaced entirely 					|
-|			|									|										|
+																						
 |Execution Continuity	| Both parent and child continue after fork()				| The original process is replaced, execution starts from new program’s entry 	|
-|			|									|										|
+																						
 |Use Case		| When a process needs to create a duplicate of itself			| When a process needs to load and run a different program 			|
-|			|									|										|
+																						
 |System Resources	| Allocates a new PID and process entry in process table		| No new PID; reuses current PID and process table entry 			|
-|			|									|										|
+																						
 |Example Function	| pid_t pid = fork();							| execl("/bin/ls", "ls", NULL); 						|
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 ```
 ## How does the vfork() system call differ from fork()?
 ```c
@@ -1615,6 +1615,7 @@ This is why error checking is critical after each system call.
 | **Use Case**           | When number of arguments is known at compile-time           | When arguments are stored in an array (e.g., dynamic) |
 
 ```
+
 
 
 
