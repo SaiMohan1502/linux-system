@@ -554,7 +554,7 @@ T
 		The kernel copies the page to a new location for the writing process.
 ```
 ## Discuss the role of the execvp() function in searching for executable files.
-
+```c
 -> The execvp() function is part of the exec family of functions in Unix-like operating systems, which replace the current process image with a new process image (i.e., a new program starts running in place of the old one, using the same process ID).
 
 	Role: PATH Searching.
@@ -568,7 +568,7 @@ T
 
 ```
 ## Explain the concept of process context switching and its impact on system performance.
-
+```c
 -> Context switching is the process where the operating system (OS) switches the CPU from executing one process to another. This allows multitasking — letting multiple processes share a single CPU.
 
 	1. Impact on System Performance:-
@@ -580,7 +580,7 @@ T
 	| Frequent Switches | Too many switches (e.g., from short time slices or I/O-heavy workloads) can degrade performance.                 |
 	| Latency           | Real-time or interactive processes may suffer delays if context switching is not well-optimized.                 |
 
-
+```
 ## Discuss the significance of the execve() function in process creation and execution. 
 ```c
 -> execve() is the core function used by all other exec* functions. It replaces the current process image with a new program.
@@ -1615,6 +1615,7 @@ This is why error checking is critical after each system call.
 | **Use Case**           | When number of arguments is known at compile-time           | When arguments are stored in an array (e.g., dynamic) |
 
 ```
+
 
 
 
