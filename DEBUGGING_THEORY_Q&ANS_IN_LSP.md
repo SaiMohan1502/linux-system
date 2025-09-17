@@ -47,7 +47,7 @@ Command:
 gcc -E file.c -o file.i
 What happens: Header files are expanded, macros are replaced.
 ```
-##How do you stop the process after the 2nd stage of compilation, and what happens in this stage?
+## How do you stop the process after the 2nd stage of compilation, and what happens in this stage?
 ```c
 Stage: Compilation
 Command:
