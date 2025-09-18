@@ -135,7 +135,7 @@ Here:-
 ## Working of pthread_mutex_trylock():
 ```c
 - Tries to lock mutex.
-- If already locked, returns EBUSY without blocking.
+- If it’s already locked, it immediately returns EBUSY ( "Resource is busy” → something you’re trying to use / already in use ) without waiting.
 ```
 ## Application of pthread_mutex_timedlock():
 ```c
