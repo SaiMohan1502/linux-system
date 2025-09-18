@@ -107,12 +107,7 @@ gcc thread.c -o thread -pthread
 ```
 ## What are the arguments of pthread_create?
 ```c
-int pthread_create(
-    pthread_t *thread,
-    const pthread_attr_t *attr,
-    void *(*start_routine)(void *),
-    void *arg
-);
+int pthread_create( pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg );
 ```
 ## Explain the return value of thread:
 ```c
