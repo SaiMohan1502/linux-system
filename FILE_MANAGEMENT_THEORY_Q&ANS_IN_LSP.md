@@ -72,7 +72,7 @@
 - Created during process creation. Default limit: 1024 (can be changed via ulimit/sysctl).
 ```
 ## When is the file object created?
-``c
+```c
 - When a file is opened using open() or similar system calls.
 ```
 ## What does open() return?
