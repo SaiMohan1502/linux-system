@@ -84,6 +84,10 @@ Ownership       | Yes (thread-owned) | No ownership
 Count-based     | Binary             | Binary or counting
 Use case        | Mutual exclusion   | Signaling or sync
 Unlock by       | Same thread only   | Any thread
+
+Mutex :- A mutex (mutual exclusion) is a locking mechanism that ensures only one thread can access a shared resource at a time
+Semaphore :- A synchronization tool in operating systems used to control access to a shared resource by multiple processes or threads.
+
 ```
 ## Variants of pthread_mutex_lock:
 ```c
