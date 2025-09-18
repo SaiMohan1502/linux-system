@@ -92,8 +92,8 @@ Semaphore :- A synchronization tool in operating systems used to control access 
 ## Variants of pthread_mutex_lock:
 ```c
 - pthread_mutex_lock() – Blocks until lock is acquired
-- pthread_mutex_trylock() – Non-blocking attempt
-- pthread_mutex_timedlock() – Waits for a given timeout
+- pthread_mutex_trylock() – tries to lock but doesn't block the thread
+- pthread_mutex_timedlock() – Waits untill the given timeout
 ```
 ## How to create a thread?
 ```c
