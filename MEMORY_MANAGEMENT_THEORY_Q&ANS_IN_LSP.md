@@ -1,7 +1,6 @@
 ## What is memory management in system programming?
 ```c
-Memory management is the process of controlling and coordinating computer memory,
-assigning blocks to various programs, and ensuring efficient use of RAM and virtual memory.
+Memory management is the process of managing and organizing computer memory by allocating blocks to different programs while ensuring the efficient use of both RAM and virtual memory.
 ```
 ## Define virtual memory.
 ```c
@@ -411,3 +410,4 @@ Compatibility with legacy code
 Protects critical regions from unauthorized access, ensures process isolation,
 and is key to enforcing the principle of least privilege.
 ```
+
