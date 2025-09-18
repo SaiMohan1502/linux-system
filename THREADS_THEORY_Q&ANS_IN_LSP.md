@@ -107,7 +107,25 @@ gcc thread.c -o thread -pthread
 ```
 ## What are the arguments of pthread_create?
 ```c
-int pthread_create( pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg );
+#include <pthread.h>
+#include <stdio.h>
+
+void *thread_func(void *arg) {
+    printf("Hello, I am a thread!\n");
+    return NULL;
+}
+
+int main() {
+    pthread_t t1;
+    pthread_create(&t1, NULL, thread_func, NULL); // no argument, just NULL
+    pthread_join(t1, NULL);
+    return 0;
+}
+
+Here:-
+        thread_func takes void *arg (but we pass NULL).
+        It just prints a message.
+
 ```
 ## Explain the return value of thread:
 ```c
